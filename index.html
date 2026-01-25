@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>余白 yohaku</title>
+    <meta name="description" content="A minimalist text editor that lives in your URL. 余白 means 'white space' in Japanese.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <article id="editor">
+        <textarea id="content" placeholder="Start writing...&#10;&#10;Tip: Begin with # Title to set a custom page title" spellcheck="false" autofocus></textarea>
+    </article>
+
+    <div id="qrModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="close-btn" id="closeQr">&times;</button>
+            <h2>Scan to open</h2>
+            <canvas id="qrCanvas"></canvas>
+            <p class="qr-hint">Point your camera at the code</p>
+        </div>
+    </div>
+
+    <div id="status" class="status">
+        <span id="statusText">Ready</span>
+    </div>
+
+    <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <button id="helpBtn" class="help-btn" aria-label="Help">?</button>
+    <div id="helpPanel" class="help-panel hidden">
+        <h3>Keyboard shortcuts</h3>
+        <ul>
+            <li><kbd>Ctrl</kbd> + <kbd>S</kbd> Save to URL</li>
+            <li><kbd>Ctrl</kbd> + <kbd>Q</kbd> Show QR code</li>
+            <li><kbd>Ctrl</kbd> + <kbd>L</kbd> Copy link</li>
+            <li><kbd>Ctrl</kbd> + <kbd>D</kbd> Toggle theme</li>
+        </ul>
+        <h3>Pro tips</h3>
+        <ul>
+            <li>Start with <code># Title</code> for custom page title</li>
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
