@@ -9,6 +9,9 @@ class TextareaEditor {
             qrCanvas: document.getElementById('qrCanvas'),
             closeQr: document.getElementById('closeQr'),
             helpBtn: document.getElementById('helpBtn'),
+            saveBtn: document.getElementById('saveBtn'),
+            qrBtn: document.getElementById('qrBtn'),
+            copyBtn: document.getElementById('copyBtn'),
             helpPanel: document.getElementById('helpPanel'),
             themeBtn: document.getElementById('themeBtn')
         };
@@ -87,6 +90,18 @@ class TextareaEditor {
 
         this.elements.helpBtn.addEventListener('click', () => {
             this.elements.helpPanel.classList.toggle('hidden');
+        });
+
+        this.elements.saveBtn.addEventListener('click', () => {
+                        this.saveToUrl();
+        });
+
+         this.elements.qrBtn.addEventListener('click', () => {
+                        this.showQrCode();
+        });
+
+         this.elements.copyBtn.addEventListener('click', () => {
+                        this.copyLink();
         });
 
         this.elements.themeBtn.addEventListener('click', () => this.toggleTheme());
