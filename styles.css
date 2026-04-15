@@ -167,7 +167,49 @@ body::before {
 .save-btn {
     position: fixed;
     bottom: 2rem;
-    right: 8rem;
+    left: 2rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.qr-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 5rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.copy-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 8rem;
     width: 36px;
     height: 36px;
     display: flex;
@@ -400,6 +442,21 @@ body::before {
     
     #content {
         min-height: calc(100vh - 4rem);
+    }
+
+    .save-btn {
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .qr-btn {
+        bottom: 1.5rem;
+        left: 4.5rem;
+    }
+
+    .copy-btn {
+        bottom: 1.5rem;
+        left: 7.5rem;
     }
     
     .help-btn {
