@@ -164,6 +164,27 @@ body::before {
     transform: scale(1.05);
 }
 
+.save-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 8rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
 .theme-btn {
     position: fixed;
     bottom: 2rem;
